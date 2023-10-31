@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+ <html>
+  <head>
+   <meta charset="UTF-8">
+   <h>Password Validation</h>
+  </head>
+ <body>
+  <div id="error"></div>
+  <form action="/" method="GET">
+   <div>
+    <label for="pass1">First Password"</label>
+    <input id="pass1" name="pass1" type ="text">
+   </div>
+   <div>
+   <label for="pass2">Second Password"</label>
+   <input id="pass2" name="pass2" type ="text">
+   </div>
+   <button type"submit">Submit</button>
+  </form>
+
+<script>
+const pass1= document.getElementById("pass1")
+const pass2 = document.getElementById("pass2")
+const form = document.getElementById("form")
+const errorElement = document.getElementById('error')
+form.addEventListner('submit', (e) =>{
+	let messages = []
+	if (pass1.value === '' || pass1.value == null)
+		messages.push('password is required')
+	}
+	if (pass1.value.length < 8) {
+		messages.push('Password must be at least 8 characters')
+	}
+	if (pass1.value != pass2.value){
+	messages.push('Passwords must match')
+
+	if (messages.length > 0){
+	e.preventDefault()
+	errorElement.innerText = messages.join(',')
+	}
+</script>
+</body>
+</html>
+ 

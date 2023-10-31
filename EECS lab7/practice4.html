@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+ <html>
+  <head>
+   <meta charset="UTF-8">
+   <h>multiplication table</h>
+  </head>
+ <body>
+  
+  <form action="/" method="GET">
+   <div>
+    <label for="num">Enter a number"</label>
+    <input id="num" name="num" type ="text">
+   </div>
+<button type"submit">Submit</button>
+</form>
+<script>
+form.addEventListner('submit', (e) =>{
+multiplication_table(num);}
+<?php
+function multiplication_table($number) {
+    echo "<table>";
+    for ($i = 0; $i <= $number; $i++) {
+        echo "<tr>";
+        for ($j = 0; $j <= $number; $j++) {
+            if ($i == 0 && $j == 0) {
+                echo "<td></td>";
+            } elseif ($i == 0) {
+                echo "<td>$j</td>";
+            } elseif ($j == 0) {
+                echo "<td>$i</td>";
+            } else {
+                echo "<td>" . $i * $j . "</td>";
+            }
+        }
+        echo "</tr>";
+    }
+    echo "</table>";
+}
+
+?>
+</body>
+</html>
